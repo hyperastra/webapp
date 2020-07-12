@@ -1,0 +1,9 @@
+{
+  "welcome": "Introduce your email and we'll send the instructions to reset your password.",
+  "email": "Email",
+  "button": "Send intructions",
+  "subtitle": {
+    "description": "Go back to",
+    "action": "hyperastra.com/sign_in"
+  }
+}

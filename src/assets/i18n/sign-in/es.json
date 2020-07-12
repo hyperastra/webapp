@@ -1,0 +1,13 @@
+{
+  "welcome": "¡Hola! Vamos a iniciar sesión",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "password_placeholder": "Introduce tu contraseña",
+  "password_reset": "¿He olvidado mi contraseña?",
+  "button": "Iniciar sesión en Hyperastra",
+  "google": "Entrar con Google",
+  "register": {
+    "description": "¿No tienes cuenta?",
+    "action": "Registrarse"
+  }
+}

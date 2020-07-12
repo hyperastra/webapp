@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hyperastra-development": {
+      "hosting": {
+        "hyperastra": [
+          "hyperastra-development"
+        ]
+      }
+    }
+  }
+}

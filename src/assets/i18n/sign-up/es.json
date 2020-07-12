@@ -1,0 +1,12 @@
+{
+  "welcome": "La mejor herramienta para darle superpoderes a tus datos.",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "password_placeholder": "Introduce tu contraseña",
+  "button": "Crear una cuenta gratis",
+  "google": "Entrar con Google",
+  "register": {
+    "description": "¿Ya tienes una cuenta?",
+    "action": "Iniciar sesión"
+  }
+}

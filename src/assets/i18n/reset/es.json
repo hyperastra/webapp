@@ -1,0 +1,9 @@
+{
+  "welcome": "Introduce tu direccion de correo eletrónico y te enviaremos las instrucciones para restaurar tu contraseña",
+  "email": "Correo electrónico",
+  "button": "Enviar instrucciones",
+  "subtitle": {
+    "description": "Volver a",
+    "action": "hyperastra.com/sign_in"
+  }
+}

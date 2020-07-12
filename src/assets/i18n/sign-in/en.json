@@ -1,0 +1,16 @@
+{
+  "welcome": "Hello! Let’s sign in",
+  "email": "Email",
+  "password": "Password",
+  "password_placeholder": "Introduce your password",
+  "password_reset": "Forgot your password?",
+  "button": "Login in Hyperastra",
+  "google": "Login in with Google",
+  "register": {
+    "description": "Don't have an account?",
+    "action": "Register"
+  },
+  "errors": {
+    "auth/user-not-found": "There is no user record corresponding to this identifier"
+  }
+}

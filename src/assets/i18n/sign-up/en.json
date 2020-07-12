@@ -1,0 +1,12 @@
+{
+  "welcome": "The best tool to give superpowers to your data.",
+  "email": "Email",
+  "password": "Password",
+  "password_placeholder": "Introduce your password",
+  "button": "Create a free account",
+  "google": "Enter with Google",
+  "register": {
+    "description": "Already have an account?",
+    "action": "Sign in"
+  }
+}
