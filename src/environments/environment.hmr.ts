@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   hmr: true,
-  apiUrl: 'localhost:8000/v1',
+  apiUrl: 'http://127.0.0.1:8000/v1',
   firebase: {
     apiKey: 'AIzaSyB2adU28A0pR-M1Ycvrt3gIbQqAsEH8_QY',
     authDomain: 'hyperastra-development.firebaseapp.com',

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SignUpService } from './services/sign-up.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hyper-sign-up',
@@ -23,7 +26,26 @@ import { Component, OnInit } from '@angular/core';
   ],
 })
 export class SignUpComponent implements OnInit {
-  constructor() {}
+  form: FormGroup;
+  error$: Observable<string>;
+
+  constructor(private fb: FormBuilder, private signUpService: SignUpService) {
+    this.initializeForm();
+  }
+
+  signUp() {
+    this.error$ = this.signUpService.error$;
+    this.signUpService.signUp(this.form.value);
+  }
 
   ngOnInit(): void {}
+
+  private initializeForm() {
+    this.form = this.fb.group({
+      first_name: [null, Validators.required],
+      last_name: [null, Validators.required],
+      email: [null, Validators.compose([Validators.required, Validators.email])],
+      password: [null, Validators.required],
+    });
+  }
 }

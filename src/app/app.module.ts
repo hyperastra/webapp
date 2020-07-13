@@ -30,6 +30,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     HttpClientModule,
     TranslocoRootModule,
     AngularFireModule.initializeApp(environment.firebase),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

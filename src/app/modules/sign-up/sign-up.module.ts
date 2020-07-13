@@ -5,6 +5,8 @@ import { TranslocoModule, TRANSLOCO_SCOPE } from '@ngneat/transloco';
 import { DirectivesModule } from '../../directives/directives.module';
 import { SharedModule } from '../shared/shared.module';
 import { SignUpComponent } from './sign-up.component';
+import { SignUpRemote } from './services/sign-up.remote';
+import { SignUpService } from './services/sign-up.service';
 
 @NgModule({
   declarations: [SignUpComponent],
@@ -21,6 +23,6 @@ import { SignUpComponent } from './sign-up.component';
     SharedModule,
   ],
   exports: [],
-  providers: [{ provide: TRANSLOCO_SCOPE, useValue: 'sign-up' }],
+  providers: [SignUpRemote, SignUpService, { provide: TRANSLOCO_SCOPE, useValue: 'sign-up' }],
 })
 export class SignUpModule {}

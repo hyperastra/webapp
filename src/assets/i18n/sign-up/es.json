@@ -1,5 +1,7 @@
 {
   "welcome": "La mejor herramienta para darle superpoderes a tus datos.",
+  "first_name": "Nombre",
+  "last_name": "Apellido",
   "email": "Correo electrónico",
   "password": "Contraseña",
   "password_placeholder": "Introduce tu contraseña",

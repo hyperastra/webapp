@@ -1,5 +1,7 @@
 {
   "welcome": "The best tool to give superpowers to your data.",
+  "first_name": "First Name",
+  "last_name": "Last Name",
   "email": "Email",
   "password": "Password",
   "password_placeholder": "Introduce your password",
