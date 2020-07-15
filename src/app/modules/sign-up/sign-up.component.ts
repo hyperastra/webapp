@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
       .left-block {
         background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
       }
+
       #tv {
         position: relative;
         width: 800px;
@@ -28,12 +29,17 @@ import { Observable } from 'rxjs';
 export class SignUpComponent implements OnInit {
   form: FormGroup;
   error$: Observable<string>;
+  submitted = false;
 
   constructor(private fb: FormBuilder, private signUpService: SignUpService) {
     this.initializeForm();
   }
 
   signUp() {
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
     this.error$ = this.signUpService.error$;
     this.signUpService.signUp(this.form.value);
   }
