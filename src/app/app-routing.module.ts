@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/reset/reset.module').then((m) => m.ResetModule),
   },
   {
+    path: '',
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
     path: '**',
     redirectTo: 'sign_in',
   },

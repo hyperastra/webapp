@@ -133,16 +133,13 @@
             </div>
           </div>
           <div>
-            <span class="block w-full rounded-xs shadow-xs mt-2">
-              <button
-                [loading]="true"
-                type="submit"
-                [ngClass]="{ 'hover:bg-primary-500 focus:border-primary-700 active:bg-primary-700': form.valid }"
-                class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-xs text-white bg-primary-600 focus:shadow-outline-primary focus:outline-none transition duration-150 ease-in-out"
-              >
-                {{ t('signUp.button') }}
-              </button>
-            </span>
+            <button
+              type="submit"
+              [ngClass]="{ 'hover:bg-primary-500 focus:border-primary-700 active:bg-primary-700': form.valid }"
+              class="w-full mt-2 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-xs text-white bg-primary-600 focus:shadow-outline-primary focus:outline-none transition duration-150 ease-in-out"
+            >
+              {{ t('signUp.button') }}
+            </button>
             <p class="text-xs mt-3 text-center">
               <span class="pr-1">{{ t('signUp.register.description') }}</span>
               <a class="text-primary-600" [routerLink]="['/sign_in']">{{ t('signUp.register.action') }}</a>

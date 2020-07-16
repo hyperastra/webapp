@@ -15,6 +15,11 @@ body {
     left 8px center no-repeat rgb(255, 255, 255);
 }
 
+svg .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: inherit;
+}
+
 @tailwind base;
 
 @tailwind components;

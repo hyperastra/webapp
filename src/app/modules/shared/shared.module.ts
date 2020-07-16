@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, AngularFireAuthModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, AngularFireAuthModule, FormsModule, ReactiveFormsModule, DirectivesModule],
   exports: [DirectivesModule, AngularFireAuthModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [],
 })

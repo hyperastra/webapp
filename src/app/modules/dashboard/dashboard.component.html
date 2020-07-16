@@ -1,0 +1,12 @@
+<div class="flex flex-col">
+  <!--<pbk-toolbar (toggle)="sidenav.toggle()"></pbk-toolbar>-->
+  <mat-sidenav-container class="bg-transparent h-screen">
+    <mat-sidenav class="w-64" mode="side" opened>
+      <!--<pbk-sidenav></pbk-sidenav>-->
+      Hyperastra
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

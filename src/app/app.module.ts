@@ -10,6 +10,9 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TranslocoRootModule } from './transloco-root.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Injectable({ providedIn: 'root' })
 export class TranslocoHttpLoader implements TranslocoLoader {
@@ -24,6 +27,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     QuicklinkModule,
     AppRoutingModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
@@ -31,6 +35,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
     TranslocoRootModule,
     AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,89 +1,51 @@
 import {
-  AfterViewInit,
+  ComponentFactory,
+  ComponentFactoryResolver,
+  ComponentRef,
   Directive,
-  ElementRef,
   Input,
-  OnChanges,
-  OnDestroy,
-  Renderer2,
-  SimpleChanges,
+  TemplateRef,
+  ViewContainerRef,
 } from '@angular/core';
+import { MatSpinner } from '@angular/material/progress-spinner';
 
 @Directive({
-  selector: 'button[loading]',
+  selector: '[loading]',
 })
-export class HyperLoadingDirective implements AfterViewInit, OnChanges, OnDestroy {
-  @Input() loading = false;
-  private containerEl: HTMLDivElement;
-  private svgEl: SVGElement;
+export class HyperLoadingDirective {
+  spinnerFactory: ComponentFactory<MatSpinner>;
+  spinnerComponent: ComponentRef<MatSpinner>;
 
-  constructor(private el: ElementRef<HTMLButtonElement>, private renderer: Renderer2) {}
+  constructor(private viewContainerRef: ViewContainerRef, private componentFactoryResolver: ComponentFactoryResolver) {
+    this.spinnerFactory = this.componentFactoryResolver.resolveComponentFactory(MatSpinner);
+  }
 
-  ngOnChanges(changes: SimpleChanges) {
-    const { currentValue } = changes.loading;
-    if (currentValue) {
-      this.showSpinner();
+  @Input() set loading(loading: boolean) {
+    if (loading) {
+      this.spinnerComponent = this.viewContainerRef.createComponent(this.spinnerFactory);
+      this.spinnerComponent.instance.diameter = 20;
     } else {
-      this.hideSpinner();
+      // this.templateRef.createEmbeddedView(this.templateRef);
     }
-  }
-
-  ngOnDestroy() {
-    this.renderer.removeChild(this.el.nativeElement, this.containerEl);
-  }
-
-  ngAfterViewInit() {
-    this.renderer.setStyle(this.el.nativeElement, 'position', 'relative');
-    this.initializeSpinner();
-    if (this.loading) {
-      this.showSpinner();
-    }
-    /*  < svg
-      width = "16"
-      height = "16"
-      viewBox = "0 0 16 16" >
-      <path fill = "currentColor"
-      d = "M9.9 0.2l-0.2 1c3 0.8 5.3 3.5 5.3 6.8 0 3.9-3.1 7-7 7s-7-3.1-7-7c0-3.3 2.3-6 5.3-6.8l-0.2-1c-3.5 0.9-6.1 4.1-6.1 7.8 0 4.4 3.6 8 8 8s8-3.6 8-8c0-3.7-2.6-6.9-6.1-7.8z" > </path>
-        < /svg>*/
-  }
-
-  private initializeSpinner() {
-    this.containerEl = this.renderer.createElement('div');
-    this.svgEl = this.renderer.createElement('svg');
-    this.createSpinner();
   }
 
   private createSpinner() {
-    const svgPath = this.renderer.createElement('path');
-    this.renderer.setAttribute(this.svgEl, 'width', '16');
-    this.renderer.setAttribute(this.svgEl, 'height', '16');
-    this.renderer.setAttribute(this.svgEl, 'viewBox', '0 0 16 16');
-    this.renderer.setAttribute(this.svgEl, 'fill', 'currentColor');
-    this.renderer.setAttribute(this.svgEl, 'xmlns', 'http://www.w3.org/2000/svg');
-    this.renderer.setAttribute(this.svgEl, 'version', '1.1');
-    this.renderer.setAttribute(
-      svgPath,
-      'd',
-      'M9.9 0.2l-0.2 1c3 0.8 5.3 3.5 5.3 6.8 0 3.9-3.1 7-7 7s-7-3.1-7-7c0-3.3 2.3-6 5.3-6.8l-0.2-1c-3.5 0.9-6.1 4.1-6.1 7.8 0 4.4 3.6 8 8 8s8-3.6 8-8c0-3.7-2.6-6.9-6.1-7.8z'
-    );
-    this.renderer.appendChild(this.svgEl, svgPath);
-    this.renderer.setStyle(this.containerEl, 'position', 'absolute');
-    this.renderer.setStyle(this.containerEl, 'left', '0');
-    this.renderer.setStyle(this.containerEl, 'top', '0');
-    this.renderer.appendChild(this.containerEl, this.svgEl);
-    this.renderer.appendChild(this.el.nativeElement, this.containerEl);
-    this.renderer.setStyle(this.el.nativeElement, 'color', 'transparent');
+    /*    this.renderer.addClass(this.containerEl, 'absolute')
+        this.renderer.addClass(this.containerEl, 'inset-0')
+        this.renderer.appendChild(this.el.nativeElement, this.containerEl);
 
-    // Hazlo con el MAT-SPINNER
+        const spinner = this.renderer.createElement('mat-spinner')
+        this.renderer.setStyle(spinner, 'diameter', '20')
+        this.renderer.appendChild(this.containerEl, spinner);
+        // Hazlo con el MAT-SPINNER
+        /!*<mat-spinner class="stroke-current text-gray-400" diameter="20"></mat-spinner>*!/*/
+    /*  console.log(this.viewContainerRef)
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(MatSpinner);
+    /!*this.viewContainerRef.clear();*!/
+
+    const componentRef = this.viewContainerRef.createComponent(componentFactory, 0, this.viewContainerRef.injector);
+    (<MatSpinner>componentRef.instance).diameter = 20;
+    (<MatSpinner>componentRef.instance)._elementRef.nativeElement.classList.add('stroke-current', 'text-gray-400')
+*/
   }
-
-  private showSpinner() {
-    if (this.containerEl) {
-      const { height, width } = this.el.nativeElement.getBoundingClientRect();
-      this.renderer.setStyle(this.containerEl, 'height', `${height}px`);
-      this.renderer.setStyle(this.containerEl, 'width', `${width}px`);
-    }
-  }
-
-  private hideSpinner() {}
 }
