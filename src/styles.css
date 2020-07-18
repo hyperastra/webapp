@@ -20,6 +20,14 @@ svg .mat-progress-spinner circle,
   stroke: inherit;
 }
 
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+* {
+  @apply transition-colors duration-300;
+}
+
 @tailwind base;
 
 @tailwind components;

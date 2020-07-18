@@ -1,0 +1,82 @@
+<div class="relative block h-full w-max-content min-w-full overflow-y-auto overflow-x-auto">
+  <div class="min-w-full mt-2">
+    <div id="header" class="border-t border-b">
+      <div class="flex sticky top-0">
+        <!-- Table Header Cell -->
+        <hyper-header-cell></hyper-header-cell>
+        <hyper-header-cell></hyper-header-cell>
+        <div class="inline-flex m-0">
+          <div class="flex relative hover:bg-shades-mid">
+            <div class="flex flex-shrink-0 overflow-hidden text-sm p-0 border-r border-cool-gray-300 h-8">
+              <div class="flex cursor-pointer w-full h-full px-2">
+                <div class="flex items-center min-w-0 text-sm">
+                  <div class="truncate">Due Date</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute z-10 flex-grow-0 right-0">
+              <div
+                class="w-1 bg-transparent cursor-col-resize bg-opacity-8 hover:bg-teal-300"
+                [style.height.px]="32"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="inline-flex m-0">
+          <div class="flex relative hover:bg-shades-mid">
+            <div class="flex flex-shrink-0 overflow-hidden text-sm p-0 border-r border-cool-gray-300 h-8">
+              <div class="flex cursor-pointer w-full h-full px-2">
+                <div class="flex items-center min-w-0 text-sm">
+                  <div class="truncate">Status</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute z-10 flex-grow-0 right-0">
+              <div
+                class="w-1 bg-transparent cursor-col-resize bg-opacity-8 hover:bg-teal-300"
+                [style.height.px]="32"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="inline-flex m-0">
+          <div class="flex relative hover:bg-shades-mid">
+            <div class="flex flex-shrink-0 overflow-hidden text-sm p-0 border-r border-cool-gray-300 h-8">
+              <div class="flex cursor-pointer w-full h-full px-2">
+                <div class="flex items-center min-w-0 text-sm">
+                  <div class="truncate">Assign</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute z-10 flex-grow-0 right-0">
+              <div
+                class="w-1 bg-transparent cursor-col-resize bg-opacity-8 hover:bg-teal-300"
+                [style.height.px]="32"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="inline-flex m-0 w-full hover:bg-shades-mid">
+          <div class="flex relative">
+            <div class="flex flex-shrink-0 overflow-hidden text-sm p-0 h-8">
+              <div class="flex-center cursor-pointer w-full h-full px-2">
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path d="M12 4v16m8-8H4"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let item of items">{{ item }}</div>
+  </div>
+</div>

@@ -3,7 +3,11 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@hyper/services": ["src/app/services/index.ts"],
+      "@hyper/components": ["src/app/components/index.ts"]
+    }
   },
   "files": [
     "src/main.ts",
