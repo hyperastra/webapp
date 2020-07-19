@@ -1,6 +1,6 @@
 <div class="relative block h-full w-max-content min-w-full overflow-y-auto overflow-x-auto">
-  <div class="min-w-full mt-2">
-    <div id="header" class="border-t border-b">
+  <div class="min-w-full">
+    <div id="header" class="border-t border-b bg-white">
       <div class="flex sticky top-0">
         <!-- Table Header Cell -->
         <hyper-header-cell></hyper-header-cell>
@@ -77,6 +77,6 @@
         </div>
       </div>
     </div>
-    <div *ngFor="let item of items">{{ item }}</div>
+    <div class="px-2 py-1 border-b" *ngFor="let item of items">{{ item }}</div>
   </div>
 </div>
